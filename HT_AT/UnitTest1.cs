@@ -24,7 +24,7 @@ namespace HT_AT
 
 
         [Test]
-        public void statusCodeTest()
+        public void StatusCodeTest()
         {
             var expectedResult = restResponse.StatusCode;
             var actualResult = HttpStatusCode.OK;
@@ -33,7 +33,7 @@ namespace HT_AT
         }
 
         [Test]
-        public void responseHeaderTest()
+        public void ResponseHeaderTest()
         {
             var contentHeaders = restResponse.ContentHeaders.ToList();
             var expectedResult = contentHeaders.First()?.Value.ToString();
@@ -43,7 +43,7 @@ namespace HT_AT
         }
 
         [Test]
-        public void responseBodyTest()
+        public void ResponseBodyTest()
         {
             var jsonobject = JsonConvert.DeserializeObject<List<User>>(restResponse.Content);
             var expectedResult = 10;
