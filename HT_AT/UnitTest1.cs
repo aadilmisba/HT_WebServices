@@ -7,6 +7,7 @@ using System.Text.Json.Nodes;
 
 namespace HT_AT
 {
+  
     public class Tests
     {
         protected RestRequest restRequest;
@@ -26,8 +27,8 @@ namespace HT_AT
         [Test]
         public void StatusCodeTest()
         {
-            var expectedResult = restResponse.StatusCode;
-            var actualResult = HttpStatusCode.OK;
+            var expectedResult = HttpStatusCode.OK;
+            var actualResult = restResponse.StatusCode;
 
             Assert.That(actualResult, Is.EqualTo(expectedResult));
         }
@@ -54,3 +55,15 @@ namespace HT_AT
 
     }
 }
+/*Goals of API Automation Testing
+ * Ensuring that various APIs of a software system are working correctly.
+Examining the data returned by an API call. For example, the HTTP response code, and HTTP response body to verify the correctness of the API under test against a variety of inputs.
+Modifying HTTP request headers, and parameters and asserting results.
+Supplying valid and invalid values as parameters of post HTTP requests and validating results.
+Calling various HTTP methods like GET/PUT/POST/DELETE on a given API URL.
+Verifying that an API is responding correctly on edge cases.
+Running tests often and quickly, either manually or through continuous integration triggers (CI) pipelines (Jenkins, Azure DevOps) to ensure product quality.
+Reducing debugging effort by finding issues closer to the root cause.
+Testing the system earlier in development, even when the UI is not available.
+Generate API documentation automatically from API specification.
+After understanding the basic goals of API testing, we are in a better position to understand why Selenium should not be used for API testing.*/
